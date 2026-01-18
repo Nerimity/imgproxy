@@ -5,15 +5,6 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        build:
-          - arch: amd64
-            dockerPlatform: linux/amd64
-            image: linux-5.0
-          - arch: arm64
-            dockerPlatform: linux/arm64/v8
-            image: arm-3.0
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -34,7 +25,7 @@ jobs:
         with:
           context: .
           file: ./docker/Dockerfile
-          platforms: ${{ matrix.build.dockerPlatform }}
+          platforms: linux/amd64
           provenance: false
           push: false
 
