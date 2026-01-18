@@ -16,7 +16,6 @@ env:
 
 jobs:
   build:
-    if: github.repository_owner == 'imgproxy'
     strategy:
       matrix:
         build:
