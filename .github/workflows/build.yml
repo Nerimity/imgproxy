@@ -25,7 +25,8 @@ jobs:
         with:
           context: .
           file: ./docker/Dockerfile
+          tags: ghcr.io/${{ github.repository_owner }}/imgproxy:${{ github.ref_name }}
           platforms: linux/amd64
           provenance: false
-          push: false
+          push: true
 
